@@ -1,1 +1,150 @@
 @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/forms";
+
+body {
+  height: 100dvh;
+}
+
+.container {
+  height: 100%;
+}
+
+#radio-cards-container {
+  margin-top: 5rem;
+  width: 75vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.radio-card {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 300px;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.radio-card:hover {
+  border: 2px solid #016787;
+  cursor: pointer;
+}
+
+.radio-card-check {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+}
+
+.radio-card-check i {
+  font-size: 1.6rem;
+  color: #016787;
+}
+
+.text-center {
+  text-align: center;
+  display: none;
+}
+
+.radio-card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.radio-card-label {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.radio-card-label-description {
+  margin-top: 0.5rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.radio-card.selected {
+  border: 2px solid #016787;
+}
+
+.radio-card.selected .radio-card-check {
+  display: inline-flex;
+}
+.radio-card.selected .text-center {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-card.selected .text-center .radio-card-label,
+.radio-card.selected .text-center .radio-card-label-description {
+  display: flex;
+  flex-direction: column;
+}
+//
+//.form-check {
+//
+//}
+//.input-background-1 {
+//  background-image: url('https://img.freepik.com/free-vector/football-abstract-concept-vector-illustration-soccer-team-tournament-football-club-fan-sports-equipment-world-championship-betting-watching-live-premiere-league-cup-abstract-metaphor_335657-4284.jpg?w=826&t=st=1684139209~exp=1684139809~hmac=34ea7e1ed8bb89f3ddd7171fc0239b779a8111e2d62fff0bba3cb29f542b8f73');
+//  background-size: cover;
+//  background-position: center;
+//  width: 210px;
+//  height: 210px;
+//  display: inline-block;
+//  padding: 10px;
+//  color: black;
+//  position: relative;
+//}
+//
+//.text-hidden {
+//  display: none;
+//}
+//.visually-hidden {
+//  position: absolute;
+//  width: 1px;
+//  height: 1px;
+//  padding: 0;
+//  margin: -1px;
+//  overflow: hidden;
+//  clip: rect(0, 0, 0, 0);
+//  white-space: nowrap;
+//  border: 0;
+//}
+
+//.form-check-input {
+//  position: absolute;
+//  opacity: 0;
+//}
+//
+
+//.form-check-label {
+//  position: relative;
+//  cursor: pointer;
+//  padding-left: 25px;
+//}
+//
+
+//.form-check-input:checked + .form-check-label::before {
+//  content: '';
+//  position: absolute;
+//  top: 50%;
+//  left: 0;
+//  transform: translateY(-50%);
+//  width: 16px;
+//  height: 16px;
+//  background-color: #007bff;
+//  border-radius: 50%;
+//}
+//
+//.form-check-input:checked + .form-check-label::before {
+//  opacity: 0.5;
+//}
