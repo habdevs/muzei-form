@@ -4,6 +4,10 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/forms";
 @import "variables";
+.btn-purple {
+  background-color: map-get($colors, "purple");
+  border-color: map-get($colors, "purple");
+}
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -27,12 +31,19 @@ body {
   max-width: 330px;
   width: 100%;
   padding: 6rem;
-  border-bottom: 1px solid gray;
+  border-bottom: 1.2px solid #8f4ae0;
 }
 .form-check-input {
   width: $form-switch-width;
   height: $form-switch-width;
-  background-color: $form-switch-bg-color;
+  border: 4px solid #8f4ae0;
+}
+.form-check-input:checked {
+  background-color: #8f4ae0;
+  border-color: #8f4ae0;
+}
+.form-check-input:disabled {
+  border-color: gray;
 }
 .form-check-label {
   font-size: 12px;
