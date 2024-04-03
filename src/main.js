@@ -1,4 +1,4 @@
-function selectRadioCard(cardNo) {
+window.selectRadioCard = function(cardNo) {
   const allRadioCards = document.querySelectorAll(".radio-card");
   allRadioCards.forEach((element, index) => {
     element.classList.remove("selected");
@@ -12,4 +12,4 @@ function selectRadioCard(cardNo) {
     selectedText.classList.add("selected");
   }
   console.log('CARD', selectedCard);
-}
+};
