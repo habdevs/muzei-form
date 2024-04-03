@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" fill="none">
+    <path fill="#EB001B" d="M7 14A7 7 0 1 0 7 0a7 7 0 0 0 0 14Z" />
+    <path fill="#F79E1B" d="M17 14a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z" />
+    <path fill="#FF5F00" fill-rule="evenodd"
+        d="M12 2.101A6.977 6.977 0 0 0 10 7c0 1.907.763 3.636 2 4.899A6.977 6.977 0 0 0 14 7a6.977 6.977 0 0 0-2-4.899Z"
+        clip-rule="evenodd" />
+</svg>
