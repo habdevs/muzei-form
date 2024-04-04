@@ -1,10 +1,17 @@
 # Подготовка
 Убедитесь, что на вашем компьютере установлены Node.js и npm.
-
-# Установка
-Клонируйте репозиторий:
 ```bash
-git clone <repository-url>
+node -v
+npm -v
+```
+# Установка
+Клонируйте репозиторий по ssh
+```bash
+git clone git@github.com:habdevs/muzei-form.git
+```
+или https
+```bash
+git clone https://github.com/habdevs/muzei-form.git
 ```
 
 ### Перейдите в директорию проекта:
