@@ -29,7 +29,7 @@ body {
   gap: 2rem;
   margin-bottom: 16rem;
 }
-@media (max-width: 1340px) {
+@media (max-width: 767px) {
   .radio-cards-container {
     flex-direction: column;
   }
@@ -40,7 +40,7 @@ body {
   justify-content: space-between;
   cursor: pointer;
   gap: 4rem;
-  min-width: 340px;
+  min-width: 28%;
   width: 100%;
   padding: 2rem;
   border: 1.2px solid #8f4ae0;
@@ -59,10 +59,22 @@ body {
 .form-check-input:disabled {
   border-color: gray;
 }
+
 .form-check-label {
+  width: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
   cursor: pointer;
   font-size: 12px;
   white-space: nowrap;
+}
+
+.text {
+  display: flex;
+  text-align: center;
 }
 .logo-card {
   cursor: pointer;
