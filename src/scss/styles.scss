@@ -106,11 +106,12 @@ body {
   cursor: pointer;
   font-size: 12px;
   white-space: nowrap;
-  border: 1.2px solid #8f4ae0;
+  border: 2px solid #8f4ae0;
   border-radius: 10px;
 }
 
 .checked {
+  border-radius: 10px;
   background-color: #8f4ae0;
   border-color: #8f4ae0;
 }
@@ -125,6 +126,13 @@ body {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.5);
   z-index: -1;
+}
+.form-check-input:disabled + .form-check-label {
+  background-color: $input-disabled-bg;
+  border-color: $input-disabled-border-color;
+}
+.form-check-input:disabled + .form-check-label img {
+  filter: grayscale(100%);
 }
 .logo-card {
   cursor: pointer;
