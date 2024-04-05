@@ -13,15 +13,20 @@
 //   }
 //   console.log('CARD', selectedCard);
 // };
+
 document.addEventListener('DOMContentLoaded', function() {
-  let formCheckLabels = document.querySelectorAll('.form-check-label');
+  let formCheckInputs = document.querySelectorAll('.form-check-input');
   
-  formCheckLabels.forEach(function(label) {
-    label.addEventListener('click', function() {
-      formCheckLabels.forEach(function(el) {
-        el.classList.remove('checked');
-      });
-      label.classList.add('checked');
+  formCheckInputs.forEach(function (input) {
+    input.addEventListener('click', function () {
+      if (!input.disabled) {
+        formCheckInputs.forEach(function (el) {
+          el.parentElement.classList.remove('checked');
+        });
+        input.parentElement.classList.add('checked');
+      }
     });
   });
 });
+
+
