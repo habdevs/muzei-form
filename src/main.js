@@ -1,19 +1,3 @@
-// window.selectRadioCard = function(cardNo) {
-//   const allRadioCards = document.querySelectorAll(".radio-card");
-//   allRadioCards.forEach((element, index) => {
-//     element.classList.remove("selected");
-//   });
-//
-//   const selectedCard = document.querySelector(".radio-card-" + cardNo);
-//   selectedCard.classList.add("selected");
-//
-//   const selectedText = document.querySelector(".text-center-" + cardNo);
-//   if (selectedText) {
-//     selectedText.classList.add("selected");
-//   }
-//   console.log('CARD', selectedCard);
-// };
-
 document.addEventListener('DOMContentLoaded', function() {
   let formCheckInputs = document.querySelectorAll('.form-check-input');
   
@@ -28,5 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+window.selectCard = function(cardNo) {
+  const selectedInput = document.querySelector(`#exampleRadios${cardNo}`);
+  if (selectedInput && selectedInput.disabled) {
+    return;
+  }
+  
+  const allDescriptions = document.querySelectorAll('.text-description');
+  allDescriptions.forEach((description) => {
+    description.classList.remove('selected');
+  });
+  
+  const selectedDescription = document.querySelector(`#exampleRadios${cardNo}`).closest('.form-check').querySelector('.text-description');
+  selectedDescription.classList.add('selected');
+};
 
 
