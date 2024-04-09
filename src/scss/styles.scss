@@ -4,6 +4,7 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/forms";
 @import "variables";
+
 .btn-purple {
   background-color: map-get($colors, "purple");
   border-color: map-get($colors, "purple");
@@ -100,16 +101,14 @@ body {
   white-space: normal;
   text-align: center;
   position: absolute;
-  top: 140px;
+  bottom: 480px;
   font-size: $font-size-base;
   border-radius: 10px;
   border: 2px solid #8f4ae0;
-}
-.form-check .text-description {
   display: none;
 }
 
-.form-check .text-description.selected {
+.text-description.selected {
   display: flex;
 }
 @media (max-width: 767px) {
@@ -127,7 +126,26 @@ body {
     white-space: normal;
     text-align: center;
     position: absolute;
-    top: 102px;
+    bottom: 540px;
     font-size: $font-size-sm;
   }
+}
+
+.img-card{
+  width: 30px;
+  height: 20px;
+}
+.nav-link {
+  padding: $nav-link-padding-y $nav-link-padding-x;
+  font-size: $nav-link-font-size;
+  font-weight: $nav-link-font-weight;
+  color: $nav-link-color;
+}
+
+.nav-link:hover {
+  color: $nav-link-hover-color;
+}
+
+.nav-link:disabled {
+  color: $nav-link-disabled-color;
 }
