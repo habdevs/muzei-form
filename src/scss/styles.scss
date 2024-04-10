@@ -4,312 +4,95 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/forms";
 @import "variables";
-.btn-purple {
-  background-color: map-get($colors, "purple");
-  border-color: map-get($colors, "purple");
-}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 html {
   font-size: 62.5%; /* 10px */
+  height: 100dvh;
 }
 body {
   height: 100dvh;
+  overflow-y: hidden;
 }
 
 .container {
   height: 100%;
 }
 .radio-cards-container {
-  margin-top: 5rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 12rem;
-}
-@media (max-width: 767px) {
-  .radio-cards-container {
-    flex-direction: column;
-  }
-}
-//.form-check {
-//  margin: 0;
-//  padding: 0;
-//  display: flex;
-//  align-items: center;
-//  justify-content: space-between;
-//  cursor: pointer;
-//  min-width: 20%;
-//  border: 1.2px solid #8f4ae0;
-//  border-radius: 10px;
-//}
-//.form-check-label {
-//  padding: 22px;
-//  width: 96px;
-//  display: flex;
-//  flex-direction: column;
-//  justify-content: center;
-//  gap: 1rem;
-//  align-items: center;
-//  cursor: pointer;
-//  font-size: 12px;
-//  white-space: nowrap;
-//}
-//.form-check-input {
-//  cursor: pointer;
-//  width: $form-switch-width;
-//  height: $form-switch-width;
-//  border: 4px solid #8f4ae0;
-//  margin: 0 !important;
-//}
-//.form-check-input:checked {
-//  background-color: #8f4ae0;
-//  border-color: #8f4ae0;
-//}
-//.form-check-input:disabled {
-//  border-color: gray;
-//}
-//.text {
-//  display: flex;
-//  text-align: center;
-//}
-//.logo-card {
-//  cursor: pointer;
-//  max-width: 30px;
-//  max-height: 20px;
-//  width: 100%;
-//  height: 100%;
-//}
-
-
-.form-check {
-  cursor: pointer;
-  position: relative;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.form-check-input {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  pointer-events: none;
-}
-
-.form-check-label {
-  padding: 22px;
-  width: 96px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
-  align-items: center;
-  cursor: pointer;
-  font-size: 12px;
-  white-space: nowrap;
-  border: 2px solid #8f4ae0;
-  border-radius: 10px;
-}
-
-.checked {
-  border-radius: 10px;
-  background-color: #8f4ae0;
-  border-color: #8f4ae0;
-}
-
-.form-check-input:checked + .form-check-label::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
-  z-index: -1;
+  align-items: center;
+  gap: 2rem;
 }
-.form-check-input:disabled + .form-check-label {
+
+.nav {
+  gap: 8px;
+}
+.img-card{
+  width: 30px;
+  height: 20px;
+}
+.nav-link {
+  width: 80px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: map-get($colors, "purple");
+  border: 1px solid map-get($colors, "purple");
+  border-radius: 6px;
+  gap: 2px;
+  padding: $nav-link-padding-y $nav-link-padding-x;
+  font-size: $nav-link-font-size;
+  font-weight: $nav-link-font-weight;
+}
+
+.nav-pills .nav-link.active {
+  background-color: map-get($colors, "purple");
+}
+
+.nav-pills .nav-link:disabled {
+  border: 1px solid $input-disabled-border-color;
   background-color: $input-disabled-bg;
-  border-color: $input-disabled-border-color;
-}
-.form-check-input:disabled + .form-check-label img {
   filter: grayscale(100%);
 }
-.logo-card {
-  cursor: pointer;
-  max-width: 30px;
-  max-height: 20px;
-  width: 100%;
-  height: 100%;
+.nav-link:hover {
+  color: $nav-link-hover-color;
 }
-.text {
-  display: flex;
-  text-align: center;
+
+.nav-link:disabled {
+  color: $nav-link-disabled-color;
 }
-.text-description {
+
+.tab-content {
+  border-radius: 6px;
+  padding: 6px;
+  border: 1px solid map-get($colors, "purple");
   white-space: normal;
+  width: 310px;
   text-align: center;
-  position: absolute;
-  top: 140px;
-  font-size: $font-size-sm !important;
-  border-radius: 10px;
-  border: 2px solid #8f4ae0;
 }
-.form-check .text-description {
-  display: none;
+.btn:hover {
+  border: 1px solid map-get($colors, "purple");
 }
-
-.form-check .text-description.selected {
-  display: flex;
+.btn-purple {
+  background-color: map-get($colors, "purple");
+  border-color: map-get($colors, "purple");
 }
 
-
-//
-//
-//
-//#radio-cards-container {
-//  margin-top: 5rem;
-//  width: 75vw;
-//  display: flex;
-//  justify-content: center;
-//  gap: 2rem;
-//  margin-bottom: 16rem;
-//}
-//
-//.wrapper-card {
-//  max-width: 300px;
-//  width: 100%;
-//  max-height: 225px;
-//  height: 100%;
-//  gap: 10px;
-//  border: 1px solid rgba(0, 0, 0, 0.1);
-//  border-radius: 10px;
-//}
-//.radio-card {
-//  display: flex;
-//  justify-content: center;
-//  position: relative;
-//  //border: 1px solid rgba(0, 0, 0, 0.1);
-//  //border-radius: 10px;
-//  width: 300px;
-//}
-//
-//.radio-card:hover {
-//  border: 1px solid #016787;
-//  cursor: pointer;
-//}
-//
-//.radio-card-check {
-//  display: none;
-//  position: absolute;
-//  top: 1.5rem;
-//  left: 1.5rem;
-//}
-//
-//.radio-card-check i {
-//  font-size: 1.6rem;
-//  color: #016787;
-//}
-//
-//.text-center {
-//  text-align: center;
-//  display: none;
-//}
-//
-//.radio-card-icon img {
-//  width: 100%;
-//  height: 100%;
-//  object-fit: cover;
-//  border-radius: 10px;
-//}
-//
-//.radio-card-label {
-//  margin-top: 1rem;
-//  font-weight: 600;
-//  font-size: 1.2rem;
-//}
-//
-//.radio-card-label-description {
-//  margin-top: 0.5rem;
-//  color: rgba(0, 0, 0, 0.7);
-//}
-//
-//.radio-card.selected {
-//  border: 2px solid #016787;
-//  border-radius: 10px;
-//}
-//
-//.radio-card.selected .radio-card-check {
-//  display: inline-flex;
-//}
-//.radio-card.selected .text-center {
-//  display: flex;
-//  flex-direction: column;
-//}
-//.radio-card.selected .text-center .radio-card-label,
-//.radio-card.selected .text-center .radio-card-label-description {
-//  display: flex;
-//  flex-direction: column;
-//}
-
-
-//
-//.form-check {
-//
-//}
-//.input-background-1 {
-//  background-image: url('https://img.freepik.com/free-vector/football-abstract-concept-vector-illustration-soccer-team-tournament-football-club-fan-sports-equipment-world-championship-betting-watching-live-premiere-league-cup-abstract-metaphor_335657-4284.jpg?w=826&t=st=1684139209~exp=1684139809~hmac=34ea7e1ed8bb89f3ddd7171fc0239b779a8111e2d62fff0bba3cb29f542b8f73');
-//  background-size: cover;
-//  background-position: center;
-//  width: 210px;
-//  height: 210px;
-//  display: inline-block;
-//  padding: 10px;
-//  color: black;
-//  position: relative;
-//}
-//
-//.text-hidden {
-//  display: none;
-//}
-//.visually-hidden {
-//  position: absolute;
-//  width: 1px;
-//  height: 1px;
-//  padding: 0;
-//  margin: -1px;
-//  overflow: hidden;
-//  clip: rect(0, 0, 0, 0);
-//  white-space: nowrap;
-//  border: 0;
-//}
-
-//.form-check-input {
-//  position: absolute;
-//  opacity: 0;
-//}
-//
-
-//.form-check-label {
-//  position: relative;
-//  cursor: pointer;
-//  padding-left: 25px;
-//}
-//
-
-//.form-check-input:checked + .form-check-label::before {
-//  content: '';
-//  position: absolute;
-//  top: 50%;
-//  left: 0;
-//  transform: translateY(-50%);
-//  width: 16px;
-//  height: 16px;
-//  background-color: #007bff;
-//  border-radius: 50%;
-//}
-//
-//.form-check-input:checked + .form-check-label::before {
-//  opacity: 0.5;
-//}
+@media screen and (max-width: 375px) {
+  .nav-link {
+    width: 76px;
+    height: 66px;
+  }
+  .tab-content {
+    width: 296px;
+  }
+}
