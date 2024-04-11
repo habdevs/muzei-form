@@ -1,0 +1,56 @@
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/forms";
+@import "variables";
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+body {
+  height: 100dvh;
+  overflow-y: hidden;
+}
+.btn-purple {
+  background-color: map-get($colors, "purple");
+}
+.btn-purple:hover {
+  border: 1px solid map-get($colors, "purple");
+}
+.carousel {
+  padding: 0 60px;
+  top:100px;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+  border-radius: 0;
+}
+.carousel-inner {
+  padding: 1em;
+}
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: map-get($colors, "purple");
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 6px;
+}
