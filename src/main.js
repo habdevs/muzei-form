@@ -1,19 +1,30 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const triggerTabList = [].slice.call(document.querySelectorAll('#pills-tab button'));
-  triggerTabList.forEach(function (triggerEl) {
-    const tabTrigger = new bootstrap.Tab(triggerEl);
-    
-    triggerEl.addEventListener('click', function (event) {
-      event.preventDefault();
-      tabTrigger.show();
+document.addEventListener('DOMContentLoaded', function() {
+  let formCheckInputs = document.querySelectorAll('.form-check-input');
+  
+  formCheckInputs.forEach(function(input) {
+    input.addEventListener('click', function() {
+      if (!input.disabled) {
+        formCheckInputs.forEach(function(el) {
+          el.parentElement.classList.remove('checked');
+        });
+        input.parentElement.classList.add('checked');
+        const tabTarget = input.getAttribute('data-tab-target');
+        showTextDescription(tabTarget);
+      }
     });
   });
-  
-  // Активирует первую вкладку
-  const triggerFirstTabEl = document.querySelector('#pills-tab li:first-child button');
-  if (triggerFirstTabEl) {
-    const tabInstance = new bootstrap.Tab(triggerFirstTabEl);
-    tabInstance.show();
-  }
 });
+
+function showTextDescription(tabTarget) {
+  const allTextDescriptions = document.querySelectorAll('.text-description');
+  allTextDescriptions.forEach(function(description) {
+    description.classList.remove('selected');
+  });
+  const selectedTextDescription = document.getElementById(tabTarget);
+  if (selectedTextDescription) {
+    selectedTextDescription.classList.add('selected');
+  }
+}
+
+
 

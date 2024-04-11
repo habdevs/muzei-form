@@ -11,88 +11,128 @@
 
 html {
   font-size: 62.5%; /* 10px */
-  height: 100dvh;
 }
 body {
   height: 100dvh;
   overflow-y: hidden;
 }
-
+.btn-purple {
+  background-color: map-get($colors, "purple");
+}
+.btn-purple:hover {
+  border: 1px solid map-get($colors, "purple");
+}
 .container {
   height: 100%;
 }
 .radio-cards-container {
+  margin: 2rem 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: 100%;
   align-items: center;
   gap: 2rem;
 }
+.form-check {
+  cursor: pointer;
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
-.nav {
-  gap: 8px;
+.form-check-input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
 }
-.img-card{
-  width: 30px;
-  height: 20px;
-}
-.nav-link {
-  width: 80px;
-  height: 70px;
+
+.form-check-label {
+  padding: 22px;
+  width: 96px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1rem;
   align-items: center;
-  color: map-get($colors, "purple");
+  cursor: pointer;
+  font-size: $font-size-base;
+  white-space: nowrap;
   border: 1px solid map-get($colors, "purple");
-  border-radius: 6px;
-  gap: 2px;
-  padding: $nav-link-padding-y $nav-link-padding-x;
-  font-size: $nav-link-font-size;
-  font-weight: $nav-link-font-weight;
+  border-radius: 10px;
 }
 
-.nav-pills .nav-link.active {
-  background-color: map-get($colors, "purple");
-}
-
-.nav-pills .nav-link:disabled {
-  border: 1px solid $input-disabled-border-color;
-  background-color: $input-disabled-bg;
-  filter: grayscale(100%);
-}
-.nav-link:hover {
-  color: $nav-link-hover-color;
-}
-
-.nav-link:disabled {
-  color: $nav-link-disabled-color;
-}
-
-.tab-content {
-  border-radius: 6px;
-  padding: 6px;
-  border: 1px solid map-get($colors, "purple");
-  white-space: normal;
-  width: 310px;
-  text-align: center;
-}
-.btn:hover {
-  border: 1px solid map-get($colors, "purple");
-}
-.btn-purple {
+.checked {
+  border-radius: 10px;
   background-color: map-get($colors, "purple");
   border-color: map-get($colors, "purple");
 }
 
-@media screen and (max-width: 375px) {
-  .nav-link {
-    width: 76px;
-    height: 66px;
+.form-check-input:checked + .form-check-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: inherit;
+  z-index: -1;
+}
+.form-check-input:disabled + .form-check-label {
+  background-color: $input-disabled-bg;
+  border-color: $input-disabled-border-color;
+}
+.form-check-input:disabled + .form-check-label img {
+  filter: grayscale(100%);
+}
+.logo-card {
+  cursor: pointer;
+  max-width: 30px;
+  max-height: 20px;
+  width: 100%;
+  height: 100%;
+}
+.text {
+  display: flex;
+  text-align: center;
+}
+
+.text-content {
+  height: 64px;
+}
+
+.text-description {
+  max-width: 440px;
+  width: 100%;
+  display: none;
+  padding: 12px;
+  white-space: normal;
+  text-align: center;
+  font-size: $font-size-base;
+  border-radius: 10px;
+  border: 1px solid map-get($colors, "purple");
+}
+
+.text-description.selected {
+  display: block;
+}
+@media (max-width: 767px) {
+  .radio-cards-container {
+    gap: 1rem;
   }
-  .tab-content {
-    width: 296px;
+  .form-check-label {
+    padding: 8px;
+    font-size: $font-size-sm;
+    width: 52px;
+  }
+  .text-description {
+    width: 216px;
+    padding: 8px;
+    white-space: normal;
+    text-align: center;
+    font-size: $font-size-sm;
+  }
+  .text-content {
+    height: 52px;
   }
 }
