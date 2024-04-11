@@ -27,4 +27,11 @@ function showTextDescription(tabTarget) {
 }
 
 
+const myCarousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
+  interval: 2000, // Интервал автопрокрутки
+  wrap: true // Разрешить циклическую прокрутку
+});
 
+// Вы можете использовать методы API для управления каруселью, например:
+myCarousel.next(); // Перейти к следующему слайду
+myCarousel.prev();
