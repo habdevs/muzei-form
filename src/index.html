@@ -11,42 +11,45 @@
 <div class="container mx-auto d-flex flex-column justify-content-center align-items-center">
   <div class="radio-cards-container">
     <div class="radio-cards-container">
-      <label class="form-check" for="exampleRadios1" onclick="selectCard('1')">
-        <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option1">
+      <label class="form-check" for="exampleRadios1" id="card1">
+        <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option1" data-tab-target="pills-bank">
         <span class="form-check-label">
           <img src="./images/mastercard.svg" alt="Pushkin" class="logo-card"/>
           <span class="text">
             Банковская<br/> карта
           </span>
         </span>
-        <span class="text-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </span>
       </label>
-      <label class="form-check" for="exampleRadios2" onclick="selectCard('2')">
-        <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2">
+      <label class="form-check" for="exampleRadios2" id="card2">
+        <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2" data-tab-target="pills-pushkin">
         <span class="form-check-label">
           <img src="./images/pushkin-pink.svg" alt="Pushkin" class="logo-card"/>
           <span class="text">
             Пушкинская<br/>карта
           </span>
         </span>
-        <span class="text-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </span>
       </label>
-      <label class="form-check" for="exampleRadios3" onclick="selectCard('3')">
-        <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="option3" disabled>
+      <label class="form-check" for="exampleRadios3" id="card3">
+        <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="option3" data-tab-target="pills-sbp" disabled>
         <span class="form-check-label">
           <img src="./images/sbp.svg" alt="Pushkin" class="logo-card"/>
           <span class="text">
             Оплата<br/> СБП
           </span>
         </span>
-        <span class="text-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </span>
       </label>
+    </div>
+  </div>
+  <div class="text-content">
+    <div class="text-description" id="pills-bank">
+      Банковская карта - очень удобный инструмент оплаты мероприятий
+    </div>
+    <div class="text-description" id="pills-pushkin">
+      Пушкинская карта - позволяет посещать мероприятия бесплатно, за счет государственного финансирования
+    </div>
+    <div class="text-description" id="pills-sbp">
+      Система
+      Быстрых Платежей - быстро и без комиссии
     </div>
   </div>
   <button class="btn btn-purple p-4 m-4">Оплатить</button>

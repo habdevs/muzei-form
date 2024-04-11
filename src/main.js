@@ -1,31 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
   let formCheckInputs = document.querySelectorAll('.form-check-input');
   
-  formCheckInputs.forEach(function (input) {
-    input.addEventListener('click', function () {
+  formCheckInputs.forEach(function(input) {
+    input.addEventListener('click', function() {
       if (!input.disabled) {
-        formCheckInputs.forEach(function (el) {
+        formCheckInputs.forEach(function(el) {
           el.parentElement.classList.remove('checked');
         });
         input.parentElement.classList.add('checked');
+        const tabTarget = input.getAttribute('data-tab-target');
+        showTextDescription(tabTarget);
       }
     });
   });
 });
 
-window.selectCard = function(cardNo) {
-  const selectedInput = document.querySelector(`#exampleRadios${cardNo}`);
-  if (selectedInput && selectedInput.disabled) {
-    return;
-  }
-  
-  const allDescriptions = document.querySelectorAll('.text-description');
-  allDescriptions.forEach((description) => {
+function showTextDescription(tabTarget) {
+  const allTextDescriptions = document.querySelectorAll('.text-description');
+  allTextDescriptions.forEach(function(description) {
     description.classList.remove('selected');
   });
-  
-  const selectedDescription = document.querySelector(`#exampleRadios${cardNo}`).closest('.form-check').querySelector('.text-description');
-  selectedDescription.classList.add('selected');
-};
+  const selectedTextDescription = document.getElementById(tabTarget);
+  if (selectedTextDescription) {
+    selectedTextDescription.classList.add('selected');
+  }
+}
+
 
 

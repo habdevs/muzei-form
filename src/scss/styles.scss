@@ -4,10 +4,7 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/forms";
 @import "variables";
-.btn-purple {
-  background-color: map-get($colors, "purple");
-  border-color: map-get($colors, "purple");
-}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -19,18 +16,22 @@ body {
   height: 100dvh;
   overflow-y: hidden;
 }
-
+.btn-purple {
+  background-color: map-get($colors, "purple");
+}
+.btn-purple:hover {
+  border: 1px solid map-get($colors, "purple");
+}
 .container {
   height: 100%;
 }
 .radio-cards-container {
-  margin-top: 2rem;
+  margin: 2rem 0;
   display: flex;
   justify-content: center;
   width: 100%;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 11rem;
 }
 .form-check {
   cursor: pointer;
@@ -56,14 +57,14 @@ body {
   cursor: pointer;
   font-size: $font-size-base;
   white-space: nowrap;
-  border: 2px solid #8f4ae0;
+  border: 1px solid map-get($colors, "purple");
   border-radius: 10px;
 }
 
 .checked {
   border-radius: 10px;
-  background-color: #8f4ae0;
-  border-color: #8f4ae0;
+  background-color: map-get($colors, "purple");
+  border-color: map-get($colors, "purple");
 }
 
 .form-check-input:checked + .form-check-label::before {
@@ -74,7 +75,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: inherit;
   z-index: -1;
 }
 .form-check-input:disabled + .form-check-label {
@@ -95,27 +96,29 @@ body {
   display: flex;
   text-align: center;
 }
+
+.text-content {
+  height: 64px;
+}
+
 .text-description {
+  max-width: 440px;
+  width: 100%;
+  display: none;
   padding: 12px;
   white-space: normal;
   text-align: center;
-  position: absolute;
-  top: 140px;
   font-size: $font-size-base;
   border-radius: 10px;
-  border: 2px solid #8f4ae0;
-}
-.form-check .text-description {
-  display: none;
+  border: 1px solid map-get($colors, "purple");
 }
 
-.form-check .text-description.selected {
-  display: flex;
+.text-description.selected {
+  display: block;
 }
 @media (max-width: 767px) {
   .radio-cards-container {
     gap: 1rem;
-    margin-bottom: 12rem;
   }
   .form-check-label {
     padding: 8px;
@@ -123,11 +126,13 @@ body {
     width: 52px;
   }
   .text-description {
+    width: 216px;
     padding: 8px;
     white-space: normal;
     text-align: center;
-    position: absolute;
-    top: 102px;
     font-size: $font-size-sm;
+  }
+  .text-content {
+    height: 52px;
   }
 }
