@@ -27,6 +27,14 @@ function showTextDescription(tabTarget) {
 }
 
 
+
+
+
+
+
+
+
+
 const myCarousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
   interval: 2000, // Интервал автопрокрутки
   wrap: true // Разрешить циклическую прокрутку

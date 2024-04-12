@@ -23,7 +23,7 @@ body {
   height: 100%;
 }
 .radio-cards-container {
-  margin: 2rem 0;
+  margin: 0.5rem 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -85,6 +85,7 @@ body {
 .form-check-input:disabled + .form-check-label img {
   filter: grayscale(100%);
 }
+
 .logo-card {
   cursor: pointer;
   max-width: 30px;
