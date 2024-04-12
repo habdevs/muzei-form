@@ -27,7 +27,7 @@ body {
   justify-content: center;
   width: 100%;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 .form-check {
   cursor: pointer;
@@ -94,11 +94,11 @@ body {
 }
 
 .text-content {
-  height: 64px;
+  height: 74px;
 }
 
 .text-description {
-  max-width: 440px;
+  max-width: 310px;
   width: 100%;
   display: none;
   padding: 12px;
@@ -114,22 +114,15 @@ body {
 }
 @media (max-width: 767px) {
   .radio-cards-container {
-    gap: 1rem;
   }
   .form-check-label {
-    padding: 8px;
-    font-size: $font-size-sm;
-    width: 52px;
   }
   .text-description {
-    width: 216px;
-    padding: 8px;
     white-space: normal;
     text-align: center;
-    font-size: $font-size-sm;
   }
   .text-content {
-    height: 52px;
+    height: 80px;
   }
 }
 
