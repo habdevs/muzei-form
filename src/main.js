@@ -21,20 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
     payButton.setAttribute('disabled', 'disabled');
   });
   
-  document.addEventListener('click', function(event) {
-    // Проверяем чтобы клик был сделан не на элементах формы
-    if (!event.target.closest('#payButton') && !event.target.closest('.form-check-input') && !event.target.closest('.text-description') && !event.target.closest('.form-check-input[disabled]')) {
-      // ремув элемента формы
-      formCheckInputs.forEach(function(input) {
-        input.parentElement.classList.remove('checked');
-      });
-      // возвращаем дизейбл кнопку оплаты
-      payButton.setAttribute('disabled', 'disabled');
-      // ресет описание текста
-      showTextDescription(null); // передаем null для ресета
-    }
-  });
-  
   
   function showTextDescription(tabTarget) {
     const allTextDescriptions = document.querySelectorAll('.text-description');
@@ -49,10 +35,23 @@ document.addEventListener('DOMContentLoaded', function() {
   
 });
 
+// РЕЗЕТ СТЕЙТА КНОПКИ ОПЛАТЫ И РАДИО
+// document.addEventListener('click', function(event) {
+//   // Проверяем чтобы клик был сделан не на элементах формы
+//   if (!event.target.closest('#payButton') && !event.target.closest('.form-check-input') && !event.target.closest('.text-description') && !event.target.closest('.form-check-input[disabled]')) {
+//     // ремув элемента формы
+//     formCheckInputs.forEach(function(input) {
+//       input.parentElement.classList.remove('checked');
+//     });
+//     // возвращаем дизейбл кнопку оплаты
+//     payButton.setAttribute('disabled', 'disabled');
+//     // ресет описание текста
+//     showTextDescription(null); // передаем null для ресета
+//   }
+// });
 
 
-
-
+// КАРУСЕЛЬ
 // const myCarousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
 //   interval: 2000,
 //   wrap: true
